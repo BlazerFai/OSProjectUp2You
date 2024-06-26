@@ -363,10 +363,27 @@ Linux codespaces-ddf0a0 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08
 Linux codespaces-ddf0a0 6.5.0-1021-azure #22~22.04.1-Ubuntu
 ```
 
-14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** __Fill answer here__.
-15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
-17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** __Fill answer here__.
+14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** 
+```bash
+- ls is listing the contents of directory
+- ls -asl is combines 3 options ‘a’, ‘s’, ‘l’. ‘a’ shows all files in the directory including hidden files meanwhile ‘s’ shows the size of each file in blocks as well as ‘l’ displays detailed information of each file.
+```
+
+15. What is the TLB size of the Virtual CPU. ***(1 mark)*** 
+```bash
+2560 4K pages
+```
+
+16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** 
+```bash
+2996.222
+```
+
+17. What is the top running process that consumes the most CPU cycles. ***(1 mark)*** 
+```bash
+ 2381 codespa+
+```
+
 
 ## Running your own container instance.
 

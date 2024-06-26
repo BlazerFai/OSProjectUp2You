@@ -81,6 +81,7 @@ Look at the TERMINAL tab. Run the following commands and provide the output here
 @BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ pwd
 /workspaces/OSProjectUp2You
 ```
+
 2. Run the command **cat /etc/passwd** . ***(1 mark)*** 
 ```bash
 @BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ cat /etc/passwd
@@ -357,7 +358,11 @@ Linux codespaces-ddf0a0 6.5.0-1021-azure #22~22.04.1-Ubuntu SMP Tue Apr 30 16:08
 6.0Gi
 ```
 
-13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** __Fill answer here__.
+13. Name the version and hardware architecture of the linux Virtual environment. ***(1 mark)*** 
+```bash
+Linux codespaces-ddf0a0 6.5.0-1021-azure #22~22.04.1-Ubuntu
+```
+
 14. What is the difference between **ls** vs **ls -asl**. ***(1 mark)*** __Fill answer here__.
 15. What is the TLB size of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
 16. What is the CPU speed of the Virtual CPU. ***(1 mark)*** __Fill answer here__.
@@ -421,7 +426,11 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 
 ***Questions:***
 
-1. Are files in the container persistent. Why not?. ***(1 mark)*** __Fill answer here__.
+1. Are files in the container persistent. Why not?. ***(1 mark)*** 
+```bash
+No because if the container is deleted then the files will be gone.
+```
+
 2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
 
 ## Running your own container with persistent storage

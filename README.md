@@ -76,7 +76,11 @@ codespace
 
 Look at the TERMINAL tab. Run the following commands and provide the output here. 
 
-1. Run the command **pwd** . ***(1 mark)*** __Fill answer here__.
+1. Run the command **pwd** . ***(1 mark)***
+``` bash 
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ pwd
+/workspaces/OSProjectUp2You
+```
 2. Run the command **cat /etc/passwd** . ***(1 mark)*** __Fill answer here__.
 3. Run the command **df** . ***(1 mark)*** __Fill answer here__.
 4. Run the command **du** . ***(1 mark)*** __Fill answer here__.

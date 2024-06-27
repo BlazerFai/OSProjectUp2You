@@ -24,8 +24,10 @@ Team Mates:
 
 ***Questions:***
 
-1. What is the link of the fork OSProject in your repository. ***(1 mark)*** <br>__ANSWER: https://github.com/BlazerFai/OSProjectUp2You__
-2. How many files and folders are in this repository. ***(1 mark)*** <br>__ANSWER: 2 files__
+1. What is the link of the fork OSProject in your repository. ***(1 mark)*** 
+https://github.com/BlazerFai/OSProjectUp2You
+2. How many files and folders are in this repository. ***(1 mark)*** 
+7 files and 1 folder
 
 
 ## Exploring github codespaces
@@ -57,9 +59,12 @@ Team Mates:
 
 ***Questions:***
 
-1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** __Fill answer here__.
-2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** __Fill answer here__.
-3. Why must we commit and sync our current work on source control? ***(1 mark)*** __Fill answer here__.
+1. What is default OS used to run the virtual environment for codespaces. ***(1 mark)*** 
+Ubuntu 20.04 LTS
+2. What are the two options of ram, disk and vcpu configuration you can have in running codespaces . ***(1 mark)*** 
+Basic Configuration and Standard Configuration.
+3. Why must we commit and sync our current work on source control? ***(1 mark)*** 
+Commit All and Sync: saves changes to local repository, pulls changes from the remote to sync with local changes, and then pushes changes to the remote repository.
 
 ## Exploring the Terminal
 
@@ -448,7 +453,10 @@ f65be1987f84   debian    "bash"    19 minutes ago   Exited (137) 18 seconds ago 
 No because if the container is deleted then the files will be gone.
 ```
 
-2. Can we run two, or three instances of debian linux? . ***(1 mark)*** __Fill answer here__.
+2. Can we run two, or three instances of debian linux? . ***(1 mark)*** 
+```bash
+Yes, it can run two, or three instances of debian linux
+```
 
 ## Running your own container with persistent storage
 
@@ -467,14 +475,27 @@ At the terminal, create a new directory called **myroot**, and run a instance of
 
 ***Questions:***
 
-1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** __Fill answer here__.
+1. Check the permission of the files created in myroot, what user and group is the files created in docker container on the host virtual machine? . ***(2 mark)*** 
+```bash
+@BlazerFai ➜ /workspaces/OSProjectUp2You/myroot (main) $ ls -l
+total 4
+-rw-rw-rw- 1 root root 34 Jun 26 15:00 helloworld1.txt
+
+- The user and the group are owned by root. It has the read and write permission for the owner group and others.
+```
+
 2. Can you change the permission of the files to user codespace.  You will need this to be able to commit and get points for this question. ***(2 mark)***
 ```bash
 //use sudo and chown
 sudo chown -R codespace:codespace myroot
 
 ```
-*** __Fill answer here__.***
+```bash 
+@BlazerFai ➜ /workspaces/OSProjectUp2You/myroot (main) $ ls -l
+total 4
+-rw-rw-rw- 1 codespace codespace 34 Jun 26 15:00 helloworld1.txt
+Yes it is possible.
+```
 
 ## You are on your own, create your own static webpage
 
@@ -500,9 +521,26 @@ docker run --detach -v /workspaces/OSProject/webpage:/usr/local/apache2/htdocs/ 
 
 ***Questions:***
 
-1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** __Fill answer here__.
-2. What port is the apache web server running. ***(1 mark)*** __Fill answer here__.
-3. What port is open for http protocol on the host machine? ***(1 mark)*** __Fill answer here__.
+1. What is the permission of folder /usr/local/apache/htdocs and what user and group owns the folder? . ***(2 mark)*** 
+```bash
+	@BlazerFai ➜ /workspaces/OSProjectUp2You/webpage (main) $ docker ps
+CONTAINER ID   IMAGE 	COMMAND          	CREATED      	STATUS      	PORTS                               	NAMES
+0c80b73db019   httpd 	"httpd-foreground"   10 minutes ago   Up 10 minutes   0.0.0.0:8080->80/tcp, :::8080->80/tcp   nervous_grothendieck
+9e24be89d0fc   debian	"bash"           	18 minutes ago   Up 18 minutes                                       	youthful_goldberg
+@BlazerFai ➜ /workspaces/OSProjectUp2You/webpage (main) $ docker exec -it nervous_grothendieck ls -ld /usr/local/apache2/htdocs
+drwxrwxrwx+ 2 1000 1000 4096 Jun 26 15:37 /usr/local/apache2/htdocs
+```
+
+2. What port is the apache web server running. ***(1 mark)*** 
+```bash
+8080
+```
+
+3. What port is open for http protocol on the host machine? ***(1 mark)*** 
+```bash
+8080
+
+```
 
 ## Create SUB Networks
 
@@ -521,11 +559,57 @@ docker run -itd --net rednet --name c2 busybox sh
 ```
 ***Questions:***
 
-1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)*** __Fill answer here__.
-2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** __Fill answer here__.
-3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** __Fill answer here__.
-4. What is the network address for the running container c1 and c2? ***(1 mark)*** __Fill answer here__.
-5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
+1. Describe what is busybox and what is command switch **--name** is for? . ***(2 mark)***
+```bash
+Busybox is a software suite and it provides some Unix utilities in one executable file.
+Command switch –name is for modify or rename something within a command using –name option.
+```
+
+2. Explore the network using the command ```docker network ls```, show the output of your terminal. ***(1 mark)*** 
+```bash
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker network ls
+NETWORK ID 	NAME  	DRIVER	SCOPE
+fd25bf814004   bluenet   bridge	local
+1d6f4171dd44   bridge	bridge	local
+f5820c817e94   host  	host  	local
+67621fed4b00   none  	null  	local
+ec89e1009cfc   rednet	bridge	local
+```
+
+3. Using ```docker inspect c1``` and ```docker inspect c2``` inscpect the two network. What is the gateway of bluenet and rednet.? ***(1 mark)*** 
+```bash
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker inspect c1
+[
+                	"Gateway": "172.18.0.1",
+]
+
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker inspect c2
+[
+                	"Gateway": "172.19.0.1",
+]
+```
+
+4. What is the network address for the running container c1 and c2? ***(1 mark)*** 
+```bash
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker inspect c1
+[
+               	"MacAddress": "02:42:ac:12:00:02",
+                	"IPAddress": "172.18.0.2",
+ ]
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker inspect c2
+[
+            	"MacAddress": "02:42:ac:13:00:02",
+                	"IPAddress": "172.19.0.2",
+                     
+]
+```
+
+5. Using the command ```docker exec c1 ping c2```, which basically tries to do a ping from container c1 to c2. Are you able to ping? Show your output . ***(1 mark)*** 
+```bash
+No I am not able to ping
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker exec c1 ping c2
+ping: bad address 'c2'
+```
 
 ## Bridging two SUB Networks
 1. Let's try this again by creating a network to bridge the two containers in the two subnetworks
@@ -537,8 +621,26 @@ docker exec c1 ping c2
 ```
 ***Questions:***
 
-1. Are you able to ping? Show your output . ***(1 mark)*** __Fill answer here__.
-2. What is different from the previous ping in the section above? ***(1 mark)*** __Fill answer here__.
+1. Are you able to ping? Show your output . ***(1 mark)***
+```bash
+Yes
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker exec c1 ping c2
+PING c2 (172.20.0.3): 56 data bytes
+64 bytes from 172.20.0.3: seq=0 ttl=64 time=0.139 ms
+64 bytes from 172.20.0.3: seq=1 ttl=64 time=0.090 ms
+64 bytes from 172.20.0.3: seq=2 ttl=64 time=0.080 ms
+64 bytes from 172.20.0.3: seq=3 ttl=64 time=0.076 ms
+64 bytes from 172.20.0.3: seq=4 ttl=64 time=0.105 ms
+64 bytes from 172.20.0.3: seq=5 ttl=64 time=0.080 ms
+64 bytes from 172.20.0.3: seq=6 ttl=64 time=0.066 ms
+64 bytes from 172.20.0.3: seq=7 ttl=64 time=0.084 ms
+64 bytes from 172.20.0.3: seq=8 ttl=64 time=0.073 ms
+```
+
+2. What is different from the previous ping in the section above? ***(1 mark)*** 
+```bash
+For the first section, we are not able to ping because there is no connection between c1 and c2. We are able to ping in the second section because we have connected c1 and c2 together.
+```
 
 ## Intermediate Level (10 marks bonus)
 
@@ -681,9 +783,17 @@ You have now set up a Node.js application in a Docker container on nodejsnet net
 
 ***Questions:***
 
-1. What is the output of step 5 above, explain the error? ***(1 mark)*** __Fill answer here__.
-2. Show the instruction needed to make this work. ***(1 mark)*** __Fill answer here__.
+1. What is the output of step 5 above, explain the error? ***(1 mark)*** 
+```bash
+@BlazerFai ➜ /workspaces/OSProjectUp2You/nodejs-app (main) $ curl http://localhost:3000/random
+Server Error
+The error is caused by the network not connected together.
+```
 
+2. Show the instruction needed to make this work. ***(1 mark)*** 
+```bash
+@BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker network connect mysqlnet nodejs-container
+```
 
 
 ## What to submit

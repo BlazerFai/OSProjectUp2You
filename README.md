@@ -793,6 +793,11 @@ The error is caused by the network not connected together.
 2. Show the instruction needed to make this work. ***(1 mark)*** 
 ```bash
 @BlazerFai ➜ /workspaces/OSProjectUp2You (main) $ docker network connect mysqlnet nodejs-container
+@BlazerFai ➜ /workspaces/OSProjectUp2You/nodejs-app (main) $ docker exec nodejs-container ping mysql-container
+PING mysql-container (172.23.0.2) 56(84) bytes of data.
+64 bytes from mysql-container.bridgenetnodejs (172.23.0.2): icmp_seq=1 ttl=64 time=0.046 ms
+64 bytes from mysql-container.bridgenetnodejs (172.23.0.2): icmp_seq=2 ttl=64 time=0.055 ms
+64 bytes from mysql-container.bridgenetnodejs (172.23.0.2): icmp_seq=3 ttl=64 time=0.056 ms
 ```
 
 
